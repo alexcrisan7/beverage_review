@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ReviewBauturi (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ReviewBauturi (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<Window
+    x:Class="ReviewBauturi.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReviewBauturi"
+    xmlns:models="using:ReviewBauturi.Models"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+
+    <ScrollViewer>
+        <StackPanel Padding="30" Spacing="15">
+            <TextBlock Text="Adaugă un Review Nou" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <TextBox x:Name="InputNumeBautura" PlaceholderText="Nume Băutură (ex: Espresso)"/>
+            <TextBox x:Name="InputCategorie" PlaceholderText="Categorie (ex: Cafea)"/>
+
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <StackPanel>
+                    <TextBlock Text="Preț:" Margin="0,0,0,5"/>
+                    <controls:NumberBox x:Name="InputPret" Value="0" SmallChange="0.5" Width="150"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Rating (1-5):" Margin="0,0,0,5"/>
+                    <Slider x:Name="InputRating" Minimum="1" Maximum="5" StepFrequency="1" Width="200" TickPlacement="Outside"/>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBox x:Name="InputComentariu" PlaceholderText="Scrie părerea ta aici..." 
+                     AcceptsReturn="True" Height="100" TextWrapping="Wrap"/>
+
+            <Button Content="Salvează Review" Click="AdaugaReview_Click" 
+                    Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Stretch"/>
+
+            <MenuFlyoutSeparator Margin="0,20"/>
+
+            <TextBlock Text="Toate Review-urile" FontSize="20" FontWeight="SemiBold"/>
+            <ListView x:Name="ListaBauturi">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Beverage">
+                        <StackPanel Margin="0,15" Background="Transparent">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Bind Name}" FontWeight="Bold" FontSize="18"/>
+
+                                <TextBlock Grid.Column="1" Text="{x:Bind PriceDisplay}" Foreground="Green" FontWeight="SemiBold"/>
+                            </Grid>
+
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{x:Bind Category}" FontStyle="Italic" Foreground="Gray"/>
+                                <TextBlock Text="|" Foreground="LightGray"/>
+
+                                <TextBlock Text="{x:Bind RatingDisplay}" FontWeight="Bold"/>
+                            </StackPanel>
+
+                            <TextBlock Text="{x:Bind Comment}" TextWrapping="Wrap" Margin="0,5,0,0" Foreground="DimGray"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
