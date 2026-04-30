@@ -1,25 +1,30 @@
-using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
-using ReviewBauturi.Data;
-using ReviewBauturi.Models;
+using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Xaml.Input;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using WinRT.Interop;
+using ReviewBauturi.Models;
+using ReviewBauturi.Data;
 
 namespace ReviewBauturi
 {
     public sealed partial class MainWindow : Window
     {
-        private User? _currentUser;
+        private Models.User? _currentUser;
         private static readonly HttpClient _httpClient = new HttpClient();
+        private string _fotografieSelectataPath = string.Empty;
 
         public MainWindow()
         {
             this.InitializeComponent();
+            RootGrid.RequestedTheme = ElementTheme.Light;
 
             if (!_httpClient.DefaultRequestHeaders.Contains("User-Agent"))
             {
@@ -30,7 +35,22 @@ namespace ReviewBauturi
             {
                 using var db = new AppDbContext();
                 db.Database.EnsureCreated();
-                // Nu apelăm IncarcaDatele aici, îl va apela Login-ul.
+
+                // === SECURITATE: CREARE CONT ADMIN IMPLICIT ===
+                // Verificăm dacă există deja un admin în baza de date
+                if (!db.Users.Any(u => u.IsAdmin == true))
+                {
+                    // Dacă nu există, creăm contul "stăpânului" aplicației
+                    var adminUser = new Models.User
+                    {
+                        Username = "Admin",         // Numele tău de admin
+                        Password = "112233", // Parola ta (alege una grea)
+                        IsAdmin = true
+                    };
+
+                    db.Users.Add(adminUser);
+                    db.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -38,14 +58,55 @@ namespace ReviewBauturi
             }
         }
 
+        // ==========================================
+        // VIZUALIZARE FOTOGRAFIE MĂRITĂ (LIGHTBOX)
+        // ==========================================
+        private void Thumbnail_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            // Preluăm imaginea de pe ecran și sursa ei
+            if (sender is Image img && img.Tag is BitmapImage bmp)
+            {
+                EnlargedImage.Source = bmp;
+                ImageOverlay.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void CloseImageOverlay_Click(object sender, RoutedEventArgs e)
+        {
+            ImageOverlay.Visibility = Visibility.Collapsed;
+        }
+
+        private void CloseImageOverlay_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            // Dacă dai click oriunde pe fundalul negru, se închide poza
+            ImageOverlay.Visibility = Visibility.Collapsed;
+        }
+
+        // ==========================================
+        // TEMA DINAMICĂ (DARK / LIGHT MODE)
+        // ==========================================
+        private void ThemeToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (RootGrid.RequestedTheme == ElementTheme.Light)
+            {
+                RootGrid.RequestedTheme = ElementTheme.Dark;
+                ThemeToggle.Content = "☀️ Light Mode";
+            }
+            else
+            {
+                RootGrid.RequestedTheme = ElementTheme.Light;
+                ThemeToggle.Content = "🌙 Dark Mode";
+            }
+        }
+
+        // ==========================================
+        // ÎNCĂRCARE, FILTRARE ȘI SORTARE (TOP)
+        // ==========================================
         private void IncarcaDatele()
         {
             using var db = new AppDbContext();
+            var bauturi = db.Beverages.ToList();
 
-            // Extragem toate băuturile din baza de date
-            var bauturi = db.Beverages.OrderByDescending(b => b.Id).ToList();
-
-            // 1. FILTRARE CATEGORIE
             if (FilterCategory.SelectedItem != null)
             {
                 string categorie = FilterCategory.SelectedItem.ToString() ?? "";
@@ -55,7 +116,6 @@ namespace ReviewBauturi
                 }
             }
 
-            // 2. FILTRARE LOCAȚIE (Căutare parțială / Case-insensitive)
             if (!string.IsNullOrWhiteSpace(FilterLocation.Text))
             {
                 string locatieCautata = FilterLocation.Text.ToLower();
@@ -63,13 +123,15 @@ namespace ReviewBauturi
                                              b.RestaurantLocation.ToLower().Contains(locatieCautata)).ToList();
             }
 
-            // 3. FILTRARE PREȚ MAXIM
-            if (!double.IsNaN(FilterPrice.Value) && FilterPrice.Value > 0)
+            if (FilterSortare.SelectedItem != null && FilterSortare.SelectedIndex == 1)
             {
-                bauturi = bauturi.Where(b => b.Price <= FilterPrice.Value).ToList();
+                bauturi = bauturi.OrderByDescending(b => b.Rating).ThenByDescending(b => b.Id).ToList();
+            }
+            else
+            {
+                bauturi = bauturi.OrderByDescending(b => b.Id).ToList();
             }
 
-            // 4. APLICARE PERMISIUNI DE ȘTERGERE PENTRU AFIȘARE
             if (_currentUser != null)
             {
                 foreach (var b in bauturi)
@@ -78,32 +140,22 @@ namespace ReviewBauturi
                 }
             }
 
-            // Actualizăm interfața cu lista filtrată
             ListaBauturi.ItemsSource = bauturi;
         }
 
-        // --- BUTOANE PANOU DE FILTRARE ---
-
-        private void ApplyFilters_Click(object sender, RoutedEventArgs e)
-        {
-            // Apelăm funcția care citește filtrele și actualizează lista
-            IncarcaDatele();
-        }
+        private void ApplyFilters_Click(object sender, RoutedEventArgs e) => IncarcaDatele();
 
         private void ClearFilters_Click(object sender, RoutedEventArgs e)
         {
-            // Resetăm interfața de filtre
-            FilterCategory.SelectedIndex = 0; // Se întoarce la "Toate"
+            FilterCategory.SelectedIndex = 0;
+            FilterSortare.SelectedIndex = 0;
             FilterLocation.Text = string.Empty;
-            FilterPrice.Value = 0;
-
-            // Reîncărcăm datele fără filtre
             IncarcaDatele();
         }
 
-
-        // --- NAVIGARE UI AUTENTIFICARE ---
-
+        // ==========================================
+        // LOGICĂ LOGIN / REGISTER
+        // ==========================================
         private void ShowLogin_Click(object sender, RoutedEventArgs e)
         {
             WelcomePanel.Visibility = Visibility.Collapsed;
@@ -130,9 +182,6 @@ namespace ReviewBauturi
             RegisterPassword.Password = string.Empty;
         }
 
-
-        // --- LOGICĂ LOGIN / REGISTER ---
-
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
@@ -143,8 +192,6 @@ namespace ReviewBauturi
                 _currentUser = user;
                 AuthGrid.Visibility = Visibility.Collapsed;
                 MainAppPanel.Visibility = Visibility.Visible;
-
-                // La prima logare, resetăm filtrele ca să vadă tot
                 ClearFilters_Click(null!, null!);
             }
             else
@@ -153,45 +200,27 @@ namespace ReviewBauturi
             }
         }
 
-        private async void Register_Click(object sender, RoutedEventArgs e)
+        private void Register_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(RegisterUsername.Text) || string.IsNullOrWhiteSpace(RegisterPassword.Password))
             {
-                EroareRegister.Text = "Completează ambele câmpuri pentru a crea contul!";
-                EroareRegister.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Red);
+                EroareRegister.Text = "Completează ambele câmpuri!";
                 return;
             }
 
             using var db = new AppDbContext();
-
             if (db.Users.Any(u => u.Username == RegisterUsername.Text))
             {
-                var dialog = new ContentDialog
-                {
-                    Title = "Nume indisponibil",
-                    Content = $"Ne pare rău, dar numele de utilizator '{RegisterUsername.Text}' este deja folosit de altcineva.\n\nTe rugăm să alegi un alt nume sau să adaugi o cifră la final.",
-                    CloseButtonText = "Am înțeles",
-                    XamlRoot = this.Content.XamlRoot
-                };
-
-                await dialog.ShowAsync();
-                RegisterUsername.Text = string.Empty;
+                EroareRegister.Text = "Numele este deja luat!";
                 return;
             }
 
-            var newUser = new User
-            {
-                Username = RegisterUsername.Text,
-                Password = RegisterPassword.Password,
-                IsAdmin = false
-            };
-
+            var newUser = new Models.User { Username = RegisterUsername.Text, Password = RegisterPassword.Password, IsAdmin = false };
             db.Users.Add(newUser);
             db.SaveChanges();
 
-            EroareRegister.Text = "Cont creat cu succes! Apasă 'Înapoi' pentru a te loga.";
-            EroareRegister.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
-
+            EroareRegister.Text = "Cont creat cu succes! Dă Înapoi pentru a intra.";
+            EroareRegister.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Green);
             RegisterUsername.Text = string.Empty;
             RegisterPassword.Password = string.Empty;
         }
@@ -204,8 +233,38 @@ namespace ReviewBauturi
             BackToWelcome_Click(null!, null!);
         }
 
+        // ==========================================
+        // FOTOGRAFII (ADĂUGARE / ȘTERGERE)
+        // ==========================================
+        private async void SelectPhotoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
 
-        // --- ADĂUGARE ȘI ȘTERGERE REVIEW ---
+            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            WinRT.Interop.InitializeWithWindow.Initialize(picker, hwnd);
+
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            var file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                string localFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string imagesFolder = Path.Combine(localFolder, "ReviewBauturiImages");
+                if (!Directory.Exists(imagesFolder)) Directory.CreateDirectory(imagesFolder);
+
+                string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.Path);
+                string newFilePath = Path.Combine(imagesFolder, newFileName);
+
+                File.Copy(file.Path, newFilePath, true);
+                _fotografieSelectataPath = newFilePath;
+
+                PreviewImagine.Source = new BitmapImage(new Uri(newFilePath));
+                PreviewImagine.Visibility = Visibility.Visible;
+            }
+        }
 
         private void AdaugaReview_Click(object sender, RoutedEventArgs e)
         {
@@ -213,7 +272,7 @@ namespace ReviewBauturi
             {
                 using (var db = new AppDbContext())
                 {
-                    var reviewNou = new Beverage
+                    var reviewNou = new Models.Beverage
                     {
                         Name = InputNumeBautura.Text,
                         Category = InputCategorie.SelectedItem.ToString() ?? "Necunoscută",
@@ -221,56 +280,79 @@ namespace ReviewBauturi
                         Price = InputPret.Value,
                         Rating = (int)InputRating.Value,
                         Comment = InputComentariu.Text,
-                        AddedBy = _currentUser.Username
+                        AddedBy = _currentUser.Username,
+                        ImagePath = _fotografieSelectataPath
                     };
 
                     db.Beverages.Add(reviewNou);
                     db.SaveChanges();
                 }
 
-                // Curățăm câmpurile de adăugare
                 InputNumeBautura.Text = string.Empty;
                 InputCategorie.SelectedIndex = -1;
                 InputRestaurant.Text = string.Empty;
-                InputPret.Value = 0;
-                InputRating.Value = 1;
+                InputPret.Value = 0.0;
+                InputRating.Value = 1.0;
                 InputComentariu.Text = string.Empty;
 
-                // După ce am adăugat un element nou, ar trebui să resetăm filtrele pentru a-l putea vedea în listă
+                _fotografieSelectataPath = string.Empty;
+                PreviewImagine.Visibility = Visibility.Collapsed;
+
                 ClearFilters_Click(null!, null!);
             }
         }
 
-        private void DeleteReview_Click(object sender, RoutedEventArgs e)
+        private async void DeleteReview_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.Tag is int reviewId && _currentUser != null)
             {
-                using (var db = new AppDbContext())
+                // 1. Creăm fereastra de confirmare
+                ContentDialog deleteDialog = new ContentDialog
                 {
-                    var reviewDeSters = db.Beverages.FirstOrDefault(b => b.Id == reviewId);
+                    Title = "Confirmare Ștergere",
+                    Content = "Ești sigur că vrei să ștergi definitiv acest review?",
+                    PrimaryButtonText = "Da, șterge",
+                    CloseButtonText = "Renunță",
+                    DefaultButton = ContentDialogButton.Close, // Setăm "Renunță" ca buton implicit pentru siguranță
+                    XamlRoot = this.Content.XamlRoot // Obligatoriu în WinUI 3 pentru a ști unde să afișeze dialogul
+                };
 
-                    if (reviewDeSters != null)
+                // 2. Afișăm fereastra și așteptăm decizia utilizatorului
+                var rezultat = await deleteDialog.ShowAsync();
+
+                // 3. Dacă a apăsat "Da, șterge", executăm ștergerea
+                if (rezultat == ContentDialogResult.Primary)
+                {
+                    using (var db = new AppDbContext())
                     {
-                        if (_currentUser.IsAdmin || reviewDeSters.AddedBy == _currentUser.Username)
+                        var reviewDeSters = db.Beverages.FirstOrDefault(b => b.Id == reviewId);
+
+                        if (reviewDeSters != null && (_currentUser.IsAdmin || reviewDeSters.AddedBy == _currentUser.Username))
                         {
+                            // Ștergem și fișierul fizic al pozei dacă există
+                            if (!string.IsNullOrEmpty(reviewDeSters.ImagePath) && File.Exists(reviewDeSters.ImagePath))
+                            {
+                                try { File.Delete(reviewDeSters.ImagePath); } catch { }
+                            }
+
                             db.Beverages.Remove(reviewDeSters);
                             db.SaveChanges();
-                            IncarcaDatele(); // Reîncărcăm folosind filtrele actuale
+                            IncarcaDatele();
                         }
                     }
                 }
+                // Dacă a apăsat "Renunță", nu se întâmplă nimic (se închide doar dialogul)
             }
         }
 
-
-        // --- OPEN STREET MAP API ---
-
+        // ==========================================
+        // OPEN STREET MAP API
+        // ==========================================
         private async void InputRestaurant_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
                 var query = sender.Text;
-
                 if (query.Length >= 3)
                 {
                     try
@@ -288,9 +370,8 @@ namespace ReviewBauturi
                             sender.ItemsSource = new List<string> { query };
                         }
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        System.Diagnostics.Debug.WriteLine($"Eroare API Hartă: {ex.Message}");
                     }
                 }
                 else

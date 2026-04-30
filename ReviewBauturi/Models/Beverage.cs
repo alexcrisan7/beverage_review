@@ -1,5 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media.Imaging;
+using System;
+using System.IO;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReviewBauturi.Models
 {
@@ -9,23 +12,41 @@ namespace ReviewBauturi.Models
         public string Name { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty;
         public string RestaurantLocation { get; set; } = string.Empty;
-        public string AddedBy { get; set; } = string.Empty; // Salvăm doar username-ul
-
         public double Price { get; set; }
         public int Rating { get; set; }
         public string Comment { get; set; } = string.Empty;
+        public string AddedBy { get; set; } = string.Empty;
 
-        // Proprietăți pentru afișare în interfață
-        public string PriceDisplay => $"{Price} RON";
-        public string RatingDisplay => $"Rating: {Rating}/5";
-        public string LocationDisplay => string.IsNullOrEmpty(RestaurantLocation) ? "" : $"📍 {RestaurantLocation}";
-        public string AddedByDisplay => string.IsNullOrEmpty(AddedBy) ? "" : $"Adăugat de: {AddedBy}";
+        // --- NOU: CÂMPUL PENTRU POZE ---
+        public string? ImagePath { get; set; }
 
-        // Proprietăți pentru controlul butonului de ștergere (NU se salvează în baza de date)
         [NotMapped]
         public bool CanDelete { get; set; }
 
         [NotMapped]
+        public string PriceDisplay => Price > 0 ? $"{Price} Lei" : "Preț nespecificat";
+
+        [NotMapped]
+        public string LocationDisplay => string.IsNullOrEmpty(RestaurantLocation) ? "Locație necunoscută" : RestaurantLocation;
+
+        [NotMapped]
+        public string AddedByDisplay => $"Adăugat de {AddedBy}";
+
+        [NotMapped]
         public Visibility DeleteButtonVisibility => CanDelete ? Visibility.Visible : Visibility.Collapsed;
+
+        // Converteste calea pozei in imagine pt interfață
+        [NotMapped]
+        public BitmapImage? ImageSource
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ImagePath) || !File.Exists(ImagePath)) return null;
+                return new BitmapImage(new Uri(ImagePath));
+            }
+        }
+
+        [NotMapped]
+        public Visibility HasImage => string.IsNullOrEmpty(ImagePath) ? Visibility.Collapsed : Visibility.Visible;
     }
 }

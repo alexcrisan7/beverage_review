@@ -226,55 +226,59 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[23];
+            _typeNameTable = new string[25];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.NumberBox";
+            _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.RatingControl";
             _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Control";
-            _typeNameTable[6] = "Double";
-            _typeNameTable[7] = "Microsoft.UI.Xaml.DataTemplate";
-            _typeNameTable[8] = "Windows.Globalization.NumberFormatting.INumberFormatter2";
-            _typeNameTable[9] = "String";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase";
-            _typeNameTable[11] = "Microsoft.UI.Xaml.Media.SolidColorBrush";
-            _typeNameTable[12] = "Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode";
-            _typeNameTable[13] = "System.Enum";
-            _typeNameTable[14] = "System.ValueType";
-            _typeNameTable[15] = "Microsoft.UI.Xaml.TextReadingOrder";
-            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.NumberBoxValidationMode";
-            _typeNameTable[17] = "ReviewBauturi.MainWindow";
-            _typeNameTable[18] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[19] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[20] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[21] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[22] = "Int32";
+            _typeNameTable[6] = "Int32";
+            _typeNameTable[7] = "Double";
+            _typeNameTable[8] = "String";
+            _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.RatingItemInfo";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[11] = "Microsoft.UI.Xaml.Controls.NumberBox";
+            _typeNameTable[12] = "Microsoft.UI.Xaml.DataTemplate";
+            _typeNameTable[13] = "Windows.Globalization.NumberFormatting.INumberFormatter2";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase";
+            _typeNameTable[15] = "Microsoft.UI.Xaml.Media.SolidColorBrush";
+            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode";
+            _typeNameTable[17] = "System.Enum";
+            _typeNameTable[18] = "System.ValueType";
+            _typeNameTable[19] = "Microsoft.UI.Xaml.TextReadingOrder";
+            _typeNameTable[20] = "Microsoft.UI.Xaml.Controls.NumberBoxValidationMode";
+            _typeNameTable[21] = "ReviewBauturi.MainWindow";
+            _typeNameTable[22] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[23] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[24] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[23];
+            _typeTable = new global::System.Type[25];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBox);
+            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.RatingControl);
             _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
-            _typeTable[6] = typeof(global::System.Double);
-            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
-            _typeTable[8] = typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2);
-            _typeTable[9] = typeof(global::System.String);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase);
-            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Media.SolidColorBrush);
-            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode);
-            _typeTable[13] = typeof(global::System.Enum);
-            _typeTable[14] = typeof(global::System.ValueType);
-            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.TextReadingOrder);
-            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode);
-            _typeTable[17] = typeof(global::ReviewBauturi.MainWindow);
-            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[19] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[21] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[22] = typeof(global::System.Int32);
+            _typeTable[6] = typeof(global::System.Int32);
+            _typeTable[7] = typeof(global::System.Double);
+            _typeTable[8] = typeof(global::System.String);
+            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.RatingItemInfo);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBox);
+            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
+            _typeTable[13] = typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase);
+            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Media.SolidColorBrush);
+            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode);
+            _typeTable[17] = typeof(global::System.Enum);
+            _typeTable[18] = typeof(global::System.ValueType);
+            _typeTable[19] = typeof(global::Microsoft.UI.Xaml.TextReadingOrder);
+            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode);
+            _typeTable[21] = typeof(global::ReviewBauturi.MainWindow);
+            _typeTable[22] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[23] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[24] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -310,19 +314,23 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_NumberBox() { return new global::Microsoft.UI.Xaml.Controls.NumberBox(); }
-        private object Activate_17_MainWindow() { return new global::ReviewBauturi.MainWindow(); }
-        private object Activate_19_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_4_RatingControl() { return new global::Microsoft.UI.Xaml.Controls.RatingControl(); }
+        private object Activate_9_RatingItemInfo() { return new global::Microsoft.UI.Xaml.Controls.RatingItemInfo(); }
+        private object Activate_11_NumberBox() { return new global::Microsoft.UI.Xaml.Controls.NumberBox(); }
+        private object Activate_21_MainWindow() { return new global::ReviewBauturi.MainWindow(); }
+        private object Activate_23_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
-        private void StaticInitializer_4_NumberBox() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBox).TypeHandle);
-        private void StaticInitializer_8_INumberFormatter2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2).TypeHandle);
-        private void StaticInitializer_12_NumberBoxSpinButtonPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode).TypeHandle);
-        private void StaticInitializer_13_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_14_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_16_NumberBoxValidationMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode).TypeHandle);
-        private void StaticInitializer_17_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ReviewBauturi.MainWindow).TypeHandle);
-        private void StaticInitializer_19_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_21_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_4_RatingControl() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RatingControl).TypeHandle);
+        private void StaticInitializer_9_RatingItemInfo() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RatingItemInfo).TypeHandle);
+        private void StaticInitializer_11_NumberBox() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBox).TypeHandle);
+        private void StaticInitializer_13_INumberFormatter2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2).TypeHandle);
+        private void StaticInitializer_16_NumberBoxSpinButtonPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode).TypeHandle);
+        private void StaticInitializer_17_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
+        private void StaticInitializer_18_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
+        private void StaticInitializer_20_NumberBoxValidationMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode).TypeHandle);
+        private void StaticInitializer_21_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ReviewBauturi.MainWindow).TypeHandle);
+        private void StaticInitializer_23_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_24_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -330,7 +338,7 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_21_IList(object instance, object item)
+        private void VectorAdd_24_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -368,10 +376,52 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Microsoft.UI.Xaml.Controls.NumberBox
+            case 4:   //  Microsoft.UI.Xaml.Controls.RatingControl
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_4_NumberBox;
-                userType.StaticInitializer = StaticInitializer_4_NumberBox;
+                userType.Activator = Activate_4_RatingControl;
+                userType.StaticInitializer = StaticInitializer_4_RatingControl;
+                userType.AddMemberName("MaxRating");
+                userType.AddMemberName("Value");
+                userType.AddMemberName("IsReadOnly");
+                userType.AddMemberName("Caption");
+                userType.AddMemberName("InitialSetValue");
+                userType.AddMemberName("IsClearEnabled");
+                userType.AddMemberName("ItemInfo");
+                userType.AddMemberName("PlaceholderValue");
+                xamlType = userType;
+                break;
+
+            case 5:   //  Microsoft.UI.Xaml.Controls.Control
+                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  Int32
+                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Double
+                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  String
+                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  Microsoft.UI.Xaml.Controls.RatingItemInfo
+                userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.StaticInitializer = StaticInitializer_9_RatingItemInfo;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Microsoft.UI.Xaml.DependencyObject
+                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  Microsoft.UI.Xaml.Controls.NumberBox
+                userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_11_NumberBox;
+                userType.StaticInitializer = StaticInitializer_11_NumberBox;
                 userType.AddMemberName("Value");
                 userType.AddMemberName("SmallChange");
                 userType.AddMemberName("AcceptsExpression");
@@ -394,86 +444,74 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Controls.Control
+            case 12:   //  Microsoft.UI.Xaml.DataTemplate
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Double
-                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  Microsoft.UI.Xaml.DataTemplate
-                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  Windows.Globalization.NumberFormatting.INumberFormatter2
+            case 13:   //  Windows.Globalization.NumberFormatting.INumberFormatter2
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_8_INumberFormatter2;
+                userType.StaticInitializer = StaticInitializer_13_INumberFormatter2;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 9:   //  String
+            case 14:   //  Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase
+            case 15:   //  Microsoft.UI.Xaml.Media.SolidColorBrush
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  Microsoft.UI.Xaml.Media.SolidColorBrush
-                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 12:   //  Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode
+            case 16:   //  Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_12_NumberBoxSpinButtonPlacementMode;
+                userType.StaticInitializer = StaticInitializer_16_NumberBoxSpinButtonPlacementMode;
                 userType.AddEnumValue("Hidden", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Hidden);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Compact);
                 userType.AddEnumValue("Inline", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Inline);
                 xamlType = userType;
                 break;
 
-            case 13:   //  System.Enum
+            case 17:   //  System.Enum
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_13_Enum;
+                userType.StaticInitializer = StaticInitializer_17_Enum;
                 xamlType = userType;
                 break;
 
-            case 14:   //  System.ValueType
+            case 18:   //  System.ValueType
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_14_ValueType;
+                userType.StaticInitializer = StaticInitializer_18_ValueType;
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.UI.Xaml.TextReadingOrder
+            case 19:   //  Microsoft.UI.Xaml.TextReadingOrder
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Microsoft.UI.Xaml.Controls.NumberBoxValidationMode
+            case 20:   //  Microsoft.UI.Xaml.Controls.NumberBoxValidationMode
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_16_NumberBoxValidationMode;
+                userType.StaticInitializer = StaticInitializer_20_NumberBoxValidationMode;
                 userType.AddEnumValue("InvalidInputOverwritten", global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten);
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode.Disabled);
                 xamlType = userType;
                 break;
 
-            case 17:   //  ReviewBauturi.MainWindow
+            case 21:   //  ReviewBauturi.MainWindow
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_17_MainWindow;
-                userType.StaticInitializer = StaticInitializer_17_MainWindow;
+                userType.Activator = Activate_21_MainWindow;
+                userType.StaticInitializer = StaticInitializer_21_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  Microsoft.UI.Xaml.Window
+            case 22:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 19:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 23:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_19_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_19_TreeViewNode;
+                userType.Activator = Activate_23_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_23_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -485,20 +523,12 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 20:   //  Microsoft.UI.Xaml.DependencyObject
-                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 21:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 24:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_21_IList;
-                userType.CollectionAdd = VectorAdd_21_IList;
+                userType.StaticInitializer = StaticInitializer_24_IList;
+                userType.CollectionAdd = VectorAdd_24_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
-                break;
-
-            case 22:   //  Int32
-                xamlType = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
@@ -569,242 +599,322 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.XamlControlsResources)instance;
             that.UseCompactResources = (global::System.Boolean)Value;
         }
-        private object get_1_NumberBox_Value(object instance)
+        private object get_1_RatingControl_MaxRating(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.MaxRating;
+        }
+        private void set_1_RatingControl_MaxRating(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.MaxRating = (global::System.Int32)Value;
+        }
+        private object get_2_RatingControl_Value(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.Value;
+        }
+        private void set_2_RatingControl_Value(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.Value = (global::System.Double)Value;
+        }
+        private object get_3_RatingControl_IsReadOnly(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.IsReadOnly;
+        }
+        private void set_3_RatingControl_IsReadOnly(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.IsReadOnly = (global::System.Boolean)Value;
+        }
+        private object get_4_RatingControl_Caption(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.Caption;
+        }
+        private void set_4_RatingControl_Caption(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.Caption = (global::System.String)Value;
+        }
+        private object get_5_RatingControl_InitialSetValue(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.InitialSetValue;
+        }
+        private void set_5_RatingControl_InitialSetValue(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.InitialSetValue = (global::System.Int32)Value;
+        }
+        private object get_6_RatingControl_IsClearEnabled(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.IsClearEnabled;
+        }
+        private void set_6_RatingControl_IsClearEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.IsClearEnabled = (global::System.Boolean)Value;
+        }
+        private object get_7_RatingControl_ItemInfo(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.ItemInfo;
+        }
+        private void set_7_RatingControl_ItemInfo(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.ItemInfo = (global::Microsoft.UI.Xaml.Controls.RatingItemInfo)Value;
+        }
+        private object get_8_RatingControl_PlaceholderValue(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            return that.PlaceholderValue;
+        }
+        private void set_8_RatingControl_PlaceholderValue(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.RatingControl)instance;
+            that.PlaceholderValue = (global::System.Double)Value;
+        }
+        private object get_9_NumberBox_Value(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Value;
         }
-        private void set_1_NumberBox_Value(object instance, object Value)
+        private void set_9_NumberBox_Value(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Value = (global::System.Double)Value;
         }
-        private object get_2_NumberBox_SmallChange(object instance)
+        private object get_10_NumberBox_SmallChange(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.SmallChange;
         }
-        private void set_2_NumberBox_SmallChange(object instance, object Value)
+        private void set_10_NumberBox_SmallChange(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.SmallChange = (global::System.Double)Value;
         }
-        private object get_3_NumberBox_AcceptsExpression(object instance)
+        private object get_11_NumberBox_AcceptsExpression(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.AcceptsExpression;
         }
-        private void set_3_NumberBox_AcceptsExpression(object instance, object Value)
+        private void set_11_NumberBox_AcceptsExpression(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.AcceptsExpression = (global::System.Boolean)Value;
         }
-        private object get_4_NumberBox_Description(object instance)
+        private object get_12_NumberBox_Description(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Description;
         }
-        private void set_4_NumberBox_Description(object instance, object Value)
+        private void set_12_NumberBox_Description(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Description = (global::System.Object)Value;
         }
-        private object get_5_NumberBox_Header(object instance)
+        private object get_13_NumberBox_Header(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Header;
         }
-        private void set_5_NumberBox_Header(object instance, object Value)
+        private void set_13_NumberBox_Header(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Header = (global::System.Object)Value;
         }
-        private object get_6_NumberBox_HeaderTemplate(object instance)
+        private object get_14_NumberBox_HeaderTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.HeaderTemplate;
         }
-        private void set_6_NumberBox_HeaderTemplate(object instance, object Value)
+        private void set_14_NumberBox_HeaderTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.HeaderTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
         }
-        private object get_7_NumberBox_IsWrapEnabled(object instance)
+        private object get_15_NumberBox_IsWrapEnabled(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.IsWrapEnabled;
         }
-        private void set_7_NumberBox_IsWrapEnabled(object instance, object Value)
+        private void set_15_NumberBox_IsWrapEnabled(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.IsWrapEnabled = (global::System.Boolean)Value;
         }
-        private object get_8_NumberBox_LargeChange(object instance)
+        private object get_16_NumberBox_LargeChange(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.LargeChange;
         }
-        private void set_8_NumberBox_LargeChange(object instance, object Value)
+        private void set_16_NumberBox_LargeChange(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.LargeChange = (global::System.Double)Value;
         }
-        private object get_9_NumberBox_Maximum(object instance)
+        private object get_17_NumberBox_Maximum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Maximum;
         }
-        private void set_9_NumberBox_Maximum(object instance, object Value)
+        private void set_17_NumberBox_Maximum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Maximum = (global::System.Double)Value;
         }
-        private object get_10_NumberBox_Minimum(object instance)
+        private object get_18_NumberBox_Minimum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Minimum;
         }
-        private void set_10_NumberBox_Minimum(object instance, object Value)
+        private void set_18_NumberBox_Minimum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Minimum = (global::System.Double)Value;
         }
-        private object get_11_NumberBox_NumberFormatter(object instance)
+        private object get_19_NumberBox_NumberFormatter(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.NumberFormatter;
         }
-        private void set_11_NumberBox_NumberFormatter(object instance, object Value)
+        private void set_19_NumberBox_NumberFormatter(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.NumberFormatter = (global::Windows.Globalization.NumberFormatting.INumberFormatter2)Value;
         }
-        private object get_12_NumberBox_PlaceholderText(object instance)
+        private object get_20_NumberBox_PlaceholderText(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.PlaceholderText;
         }
-        private void set_12_NumberBox_PlaceholderText(object instance, object Value)
+        private void set_20_NumberBox_PlaceholderText(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.PlaceholderText = (global::System.String)Value;
         }
-        private object get_13_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus(object instance)
+        private object get_21_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.PreventKeyboardDisplayOnProgrammaticFocus;
         }
-        private void set_13_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus(object instance, object Value)
+        private void set_21_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.PreventKeyboardDisplayOnProgrammaticFocus = (global::System.Boolean)Value;
         }
-        private object get_14_NumberBox_SelectionFlyout(object instance)
+        private object get_22_NumberBox_SelectionFlyout(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.SelectionFlyout;
         }
-        private void set_14_NumberBox_SelectionFlyout(object instance, object Value)
+        private void set_22_NumberBox_SelectionFlyout(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.SelectionFlyout = (global::Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase)Value;
         }
-        private object get_15_NumberBox_SelectionHighlightColor(object instance)
+        private object get_23_NumberBox_SelectionHighlightColor(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.SelectionHighlightColor;
         }
-        private void set_15_NumberBox_SelectionHighlightColor(object instance, object Value)
+        private void set_23_NumberBox_SelectionHighlightColor(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.SelectionHighlightColor = (global::Microsoft.UI.Xaml.Media.SolidColorBrush)Value;
         }
-        private object get_16_NumberBox_SpinButtonPlacementMode(object instance)
+        private object get_24_NumberBox_SpinButtonPlacementMode(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.SpinButtonPlacementMode;
         }
-        private void set_16_NumberBox_SpinButtonPlacementMode(object instance, object Value)
+        private void set_24_NumberBox_SpinButtonPlacementMode(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.SpinButtonPlacementMode = (global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode)Value;
         }
-        private object get_17_NumberBox_Text(object instance)
+        private object get_25_NumberBox_Text(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.Text;
         }
-        private void set_17_NumberBox_Text(object instance, object Value)
+        private void set_25_NumberBox_Text(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.Text = (global::System.String)Value;
         }
-        private object get_18_NumberBox_TextReadingOrder(object instance)
+        private object get_26_NumberBox_TextReadingOrder(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.TextReadingOrder;
         }
-        private void set_18_NumberBox_TextReadingOrder(object instance, object Value)
+        private void set_26_NumberBox_TextReadingOrder(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.TextReadingOrder = (global::Microsoft.UI.Xaml.TextReadingOrder)Value;
         }
-        private object get_19_NumberBox_ValidationMode(object instance)
+        private object get_27_NumberBox_ValidationMode(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             return that.ValidationMode;
         }
-        private void set_19_NumberBox_ValidationMode(object instance, object Value)
+        private void set_27_NumberBox_ValidationMode(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.NumberBox)instance;
             that.ValidationMode = (global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode)Value;
         }
-        private object get_20_TreeViewNode_Children(object instance)
+        private object get_28_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_21_TreeViewNode_Content(object instance)
+        private object get_29_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_21_TreeViewNode_Content(object instance, object Value)
+        private void set_29_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_22_TreeViewNode_Depth(object instance)
+        private object get_30_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_23_TreeViewNode_HasChildren(object instance)
+        private object get_31_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_24_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_32_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_24_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_32_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_25_TreeViewNode_IsExpanded(object instance)
+        private object get_33_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_25_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_33_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_26_TreeViewNode_Parent(object instance)
+        private object get_34_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -824,183 +934,239 @@ namespace ReviewBauturi.ReviewBauturi_XamlTypeInfo
                 xamlMember.Getter = get_0_XamlControlsResources_UseCompactResources;
                 xamlMember.Setter = set_0_XamlControlsResources_UseCompactResources;
                 break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.MaxRating":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "MaxRating", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_RatingControl_MaxRating;
+                xamlMember.Setter = set_1_RatingControl_MaxRating;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.Value":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Value", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_RatingControl_Value;
+                xamlMember.Setter = set_2_RatingControl_Value;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.IsReadOnly":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_RatingControl_IsReadOnly;
+                xamlMember.Setter = set_3_RatingControl_IsReadOnly;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.Caption":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Caption", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_RatingControl_Caption;
+                xamlMember.Setter = set_4_RatingControl_Caption;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.InitialSetValue":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "InitialSetValue", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_RatingControl_InitialSetValue;
+                xamlMember.Setter = set_5_RatingControl_InitialSetValue;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.IsClearEnabled":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "IsClearEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_RatingControl_IsClearEnabled;
+                xamlMember.Setter = set_6_RatingControl_IsClearEnabled;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.ItemInfo":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "ItemInfo", "Microsoft.UI.Xaml.Controls.RatingItemInfo");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_RatingControl_ItemInfo;
+                xamlMember.Setter = set_7_RatingControl_ItemInfo;
+                break;
+            case "Microsoft.UI.Xaml.Controls.RatingControl.PlaceholderValue":
+                userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RatingControl");
+                xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "PlaceholderValue", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_RatingControl_PlaceholderValue;
+                xamlMember.Setter = set_8_RatingControl_PlaceholderValue;
+                break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Value":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Value", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_NumberBox_Value;
-                xamlMember.Setter = set_1_NumberBox_Value;
+                xamlMember.Getter = get_9_NumberBox_Value;
+                xamlMember.Setter = set_9_NumberBox_Value;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.SmallChange":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "SmallChange", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_NumberBox_SmallChange;
-                xamlMember.Setter = set_2_NumberBox_SmallChange;
+                xamlMember.Getter = get_10_NumberBox_SmallChange;
+                xamlMember.Setter = set_10_NumberBox_SmallChange;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.AcceptsExpression":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "AcceptsExpression", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_NumberBox_AcceptsExpression;
-                xamlMember.Setter = set_3_NumberBox_AcceptsExpression;
+                xamlMember.Getter = get_11_NumberBox_AcceptsExpression;
+                xamlMember.Setter = set_11_NumberBox_AcceptsExpression;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Description":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Description", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_NumberBox_Description;
-                xamlMember.Setter = set_4_NumberBox_Description;
+                xamlMember.Getter = get_12_NumberBox_Description;
+                xamlMember.Setter = set_12_NumberBox_Description;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Header":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_NumberBox_Header;
-                xamlMember.Setter = set_5_NumberBox_Header;
+                xamlMember.Getter = get_13_NumberBox_Header;
+                xamlMember.Setter = set_13_NumberBox_Header;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.HeaderTemplate":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Microsoft.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_NumberBox_HeaderTemplate;
-                xamlMember.Setter = set_6_NumberBox_HeaderTemplate;
+                xamlMember.Getter = get_14_NumberBox_HeaderTemplate;
+                xamlMember.Setter = set_14_NumberBox_HeaderTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.IsWrapEnabled":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "IsWrapEnabled", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_NumberBox_IsWrapEnabled;
-                xamlMember.Setter = set_7_NumberBox_IsWrapEnabled;
+                xamlMember.Getter = get_15_NumberBox_IsWrapEnabled;
+                xamlMember.Setter = set_15_NumberBox_IsWrapEnabled;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.LargeChange":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "LargeChange", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_NumberBox_LargeChange;
-                xamlMember.Setter = set_8_NumberBox_LargeChange;
+                xamlMember.Getter = get_16_NumberBox_LargeChange;
+                xamlMember.Setter = set_16_NumberBox_LargeChange;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Maximum":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Maximum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_NumberBox_Maximum;
-                xamlMember.Setter = set_9_NumberBox_Maximum;
+                xamlMember.Getter = get_17_NumberBox_Maximum;
+                xamlMember.Setter = set_17_NumberBox_Maximum;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Minimum":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Minimum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_NumberBox_Minimum;
-                xamlMember.Setter = set_10_NumberBox_Minimum;
+                xamlMember.Getter = get_18_NumberBox_Minimum;
+                xamlMember.Setter = set_18_NumberBox_Minimum;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.NumberFormatter":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "NumberFormatter", "Windows.Globalization.NumberFormatting.INumberFormatter2");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_NumberBox_NumberFormatter;
-                xamlMember.Setter = set_11_NumberBox_NumberFormatter;
+                xamlMember.Getter = get_19_NumberBox_NumberFormatter;
+                xamlMember.Setter = set_19_NumberBox_NumberFormatter;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.PlaceholderText":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "PlaceholderText", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_NumberBox_PlaceholderText;
-                xamlMember.Setter = set_12_NumberBox_PlaceholderText;
+                xamlMember.Getter = get_20_NumberBox_PlaceholderText;
+                xamlMember.Setter = set_20_NumberBox_PlaceholderText;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.PreventKeyboardDisplayOnProgrammaticFocus":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "PreventKeyboardDisplayOnProgrammaticFocus", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus;
-                xamlMember.Setter = set_13_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus;
+                xamlMember.Getter = get_21_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus;
+                xamlMember.Setter = set_21_NumberBox_PreventKeyboardDisplayOnProgrammaticFocus;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.SelectionFlyout":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "SelectionFlyout", "Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_NumberBox_SelectionFlyout;
-                xamlMember.Setter = set_14_NumberBox_SelectionFlyout;
+                xamlMember.Getter = get_22_NumberBox_SelectionFlyout;
+                xamlMember.Setter = set_22_NumberBox_SelectionFlyout;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.SelectionHighlightColor":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "SelectionHighlightColor", "Microsoft.UI.Xaml.Media.SolidColorBrush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_NumberBox_SelectionHighlightColor;
-                xamlMember.Setter = set_15_NumberBox_SelectionHighlightColor;
+                xamlMember.Getter = get_23_NumberBox_SelectionHighlightColor;
+                xamlMember.Setter = set_23_NumberBox_SelectionHighlightColor;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.SpinButtonPlacementMode":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "SpinButtonPlacementMode", "Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_NumberBox_SpinButtonPlacementMode;
-                xamlMember.Setter = set_16_NumberBox_SpinButtonPlacementMode;
+                xamlMember.Getter = get_24_NumberBox_SpinButtonPlacementMode;
+                xamlMember.Setter = set_24_NumberBox_SpinButtonPlacementMode;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.Text":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Text", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_NumberBox_Text;
-                xamlMember.Setter = set_17_NumberBox_Text;
+                xamlMember.Getter = get_25_NumberBox_Text;
+                xamlMember.Setter = set_25_NumberBox_Text;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.TextReadingOrder":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "TextReadingOrder", "Microsoft.UI.Xaml.TextReadingOrder");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_NumberBox_TextReadingOrder;
-                xamlMember.Setter = set_18_NumberBox_TextReadingOrder;
+                xamlMember.Getter = get_26_NumberBox_TextReadingOrder;
+                xamlMember.Setter = set_26_NumberBox_TextReadingOrder;
                 break;
             case "Microsoft.UI.Xaml.Controls.NumberBox.ValidationMode":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NumberBox");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "ValidationMode", "Microsoft.UI.Xaml.Controls.NumberBoxValidationMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_NumberBox_ValidationMode;
-                xamlMember.Setter = set_19_NumberBox_ValidationMode;
+                xamlMember.Getter = get_27_NumberBox_ValidationMode;
+                xamlMember.Setter = set_27_NumberBox_ValidationMode;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_20_TreeViewNode_Children;
+                xamlMember.Getter = get_28_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_TreeViewNode_Content;
-                xamlMember.Setter = set_21_TreeViewNode_Content;
+                xamlMember.Getter = get_29_TreeViewNode_Content;
+                xamlMember.Setter = set_29_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_TreeViewNode_Depth;
+                xamlMember.Getter = get_30_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_31_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_24_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_24_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_32_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_32_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_25_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_33_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_33_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ReviewBauturi.ReviewBauturi_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_26_TreeViewNode_Parent;
+                xamlMember.Getter = get_34_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

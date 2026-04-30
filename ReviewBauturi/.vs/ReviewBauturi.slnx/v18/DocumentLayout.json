@@ -11,32 +11,12 @@
       "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\reviewbauturi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:reviewbauturi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|c:\\users\\alexc\\desktop\\sem2\\ii\\proiect\\reviewbauturi\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF3B0135-1A92-03BF-DEBC-AD10B292A461}|ReviewBauturi.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,15 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T07:19:16.442Z",
+              "WhenOpened": "2026-04-30T18:42:33.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Beverage.cs",
+              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Beverage.cs",
+              "RelativeDocumentMoniker": "Models\\Beverage.cs",
+              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Beverage.cs",
+              "RelativeToolTip": "Models\\Beverage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T18:42:16.004Z",
               "EditorCaption": ""
             },
             {
@@ -77,7 +70,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAB4BAAAAAAAAAADwvykBAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwCgAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-14T09:36:36.849Z",
               "EditorCaption": ""
@@ -90,86 +83,10 @@
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AgIAAHIAAAAAAAAAAADwv4cAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAuwB0BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-14T09:36:18.019Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T09:36:05.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Beverage.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Beverage.cs",
-              "RelativeDocumentMoniker": "Models\\Beverage.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Beverage.cs",
-              "RelativeToolTip": "Models\\Beverage.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T09:35:19.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "Models\\Review.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\Models\\Review.cs",
-              "RelativeToolTip": "Models\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T09:35:37.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.g.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "RelativeDocumentMoniker": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "RelativeToolTip": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "ViewState": "AgIAAO8BAAAAAAAAAAAiwPoBAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T09:59:39.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwBwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T09:49:12.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReviewBauturi.csproj",
-              "DocumentMoniker": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\ReviewBauturi.csproj",
-              "RelativeDocumentMoniker": "ReviewBauturi.csproj",
-              "ToolTip": "C:\\Users\\alexc\\Desktop\\SEM2\\II\\proiect\\ReviewBauturi\\ReviewBauturi.csproj",
-              "RelativeToolTip": "ReviewBauturi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-14T10:06:43.354Z"
             }
           ]
         }

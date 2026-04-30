@@ -4,133 +4,283 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ReviewBauturi"
     xmlns:models="using:ReviewBauturi.Models"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    Title="DrinkReview - Notare Băuturi">
 
-    <Grid>
-        <Grid x:Name="AuthGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
-            <StackPanel x:Name="WelcomePanel" Spacing="15">
-                <TextBlock Text="DrinkReview" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="{ThemeResource SystemControlHighlightAccentBrush}"/>
-                <TextBlock Text="Aplicația ta de notare a băuturilor" Foreground="Gray" FontSize="14" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                <Button Content="Autentificare" Click="ShowLogin_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="45" FontSize="16"/>
-                <Button Content="Creare cont nou" Click="ShowRegister_Click" HorizontalAlignment="Stretch" Height="45" FontSize="16"/>
-            </StackPanel>
+    <Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-            <StackPanel x:Name="LoginPanel" Spacing="15" Visibility="Collapsed">
-                <TextBlock Text="Autentificare" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                <TextBox x:Name="LoginUsername" PlaceholderText="Nume utilizator"/>
-                <PasswordBox x:Name="LoginPassword" PlaceholderText="Parolă"/>
-                <Button Content="Intră în cont" Click="Login_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="40"/>
-                <Button Content="Înapoi" Click="BackToWelcome_Click" HorizontalAlignment="Stretch" Background="Transparent" BorderBrush="Transparent"/>
-                <TextBlock x:Name="EroareLogin" Foreground="Red" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-            </StackPanel>
-
-            <StackPanel x:Name="RegisterPanel" Spacing="15" Visibility="Collapsed">
-                <TextBlock Text="Cont Nou" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                <TextBox x:Name="RegisterUsername" PlaceholderText="Alege un nume de utilizator"/>
-                <PasswordBox x:Name="RegisterPassword" PlaceholderText="Alege o parolă"/>
-                <Button Content="Creează contul" Click="Register_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="40"/>
-                <Button Content="Înapoi" Click="BackToWelcome_Click" HorizontalAlignment="Stretch" Background="Transparent" BorderBrush="Transparent"/>
-                <TextBlock x:Name="EroareRegister" Foreground="Red" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-            </StackPanel>
-        </Grid>
-
-        <ScrollViewer x:Name="MainAppPanel" Visibility="Collapsed">
-            <StackPanel Padding="30" Spacing="15">
+        <!-- ========================================== -->
+        <!-- 1. ECRANELE DE AUTENTIFICARE               -->
+        <!-- ========================================== -->
+        <Grid x:Name="AuthGrid" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border Width="360" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                    CornerRadius="12" Padding="32">
 
                 <Grid>
-                    <TextBlock Text="Adaugă un Review Nou" FontSize="24" FontWeight="Bold"/>
-                    <Button Content="Delogare" Click="Logout_Click" HorizontalAlignment="Right"/>
+                    <StackPanel x:Name="WelcomePanel" Spacing="16">
+                        <FontIcon Glyph="&#xE753;" FontSize="48" Foreground="{ThemeResource SystemControlHighlightAccentBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Text="DrinkReview" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" />
+                        <TextBlock Text="Aplicația ta de notare a băuturilor" Foreground="{ThemeResource TextFillColorSecondaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,16"/>
+                        <Button Content="Autentificare" Click="ShowLogin_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="40" FontSize="15"/>
+                        <Button Content="Creare cont nou" Click="ShowRegister_Click" HorizontalAlignment="Stretch" Height="40" FontSize="15"/>
+                    </StackPanel>
+
+                    <StackPanel x:Name="LoginPanel" Spacing="16" Visibility="Collapsed">
+                        <TextBlock Text="Autentificare" Style="{StaticResource TitleTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBox x:Name="LoginUsername" Header="Nume utilizator" PlaceholderText="ex: alex123"/>
+                        <PasswordBox x:Name="LoginPassword" Header="Parolă" PlaceholderText="Introdu parola"/>
+                        <Button Content="Intră în cont" Click="Login_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="40" Margin="0,8,0,0"/>
+                        <Button Content="Înapoi" Click="BackToWelcome_Click" HorizontalAlignment="Stretch" Background="Transparent" BorderBrush="Transparent"/>
+                        <TextBlock x:Name="EroareLogin" Foreground="#D13438" HorizontalAlignment="Center" TextWrapping="Wrap" FontWeight="SemiBold"/>
+                    </StackPanel>
+
+                    <StackPanel x:Name="RegisterPanel" Spacing="16" Visibility="Collapsed">
+                        <TextBlock Text="Cont Nou" Style="{StaticResource TitleTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <TextBox x:Name="RegisterUsername" Header="Alege un nume" PlaceholderText="Nume utilizator unic"/>
+                        <PasswordBox x:Name="RegisterPassword" Header="Alege o parolă" PlaceholderText="Parolă sigură"/>
+                        <Button Content="Creează contul" Click="Register_Click" HorizontalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}" Height="40" Margin="0,8,0,0"/>
+                        <Button Content="Înapoi" Click="BackToWelcome_Click" HorizontalAlignment="Stretch" Background="Transparent" BorderBrush="Transparent"/>
+                        <TextBlock x:Name="EroareRegister" Foreground="#D13438" HorizontalAlignment="Center" TextWrapping="Wrap" FontWeight="SemiBold"/>
+                    </StackPanel>
                 </Grid>
+            </Border>
+        </Grid>
 
-                <TextBox x:Name="InputNumeBautura" PlaceholderText="Nume Băutură (ex: Espresso)"/>
+        <!-- ========================================== -->
+        <!-- 2. APLICAȚIA PRINCIPALĂ (DUPA LOGIN)       -->
+        <!-- ========================================== -->
+        <Grid x:Name="MainAppPanel" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-                <ComboBox x:Name="InputCategorie" PlaceholderText="Selectează Categoria" HorizontalAlignment="Stretch">
-                    <x:String>Cafea</x:String>
-                    <x:String>Bere</x:String>
-                    <x:String>Vin</x:String>
-                    <x:String>Cocktail</x:String>
-                    <x:String>Ceai / Răcoritoare</x:String>
-                    <x:String>Spirtoase</x:String>
-                </ComboBox>
-
-                <AutoSuggestBox x:Name="InputRestaurant" PlaceholderText="Unde ai băut? (Căutare locație...)" 
-                                TextChanged="InputRestaurant_TextChanged" QueryIcon="Find"/>
-
-                <StackPanel Orientation="Horizontal" Spacing="20">
-                    <StackPanel>
-                        <TextBlock Text="Preț:" Margin="0,0,0,5"/>
-                        <controls:NumberBox x:Name="InputPret" Value="0" SmallChange="0.5" Width="150"/>
+            <Border Grid.Row="0" Background="{ThemeResource LayerFillColorDefaultBrush}" Padding="24,12" 
+                    BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}" BorderThickness="0,0,0,1">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                        <FontIcon Glyph="&#xE753;" Foreground="{ThemeResource SystemControlHighlightAccentBrush}"/>
+                        <TextBlock Text="DrinkReview" Style="{StaticResource SubtitleTextBlockStyle}" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Rating (1-5):" Margin="0,0,0,5"/>
-                        <Slider x:Name="InputRating" Minimum="1" Maximum="5" StepFrequency="1" Width="200" TickPlacement="Outside"/>
+
+                    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <ToggleButton x:Name="ThemeToggle" Content="🌙 Dark Mode" Click="ThemeToggle_Click"/>
+                        <Button Content="Delogare" Click="Logout_Click" />
                     </StackPanel>
-                </StackPanel>
+                </Grid>
+            </Border>
 
-                <TextBox x:Name="InputComentariu" PlaceholderText="Scrie părerea ta aici..." AcceptsReturn="True" Height="100" TextWrapping="Wrap"/>
-                <Button Content="Salvează Review" Click="AdaugaReview_Click" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Stretch"/>
+            <Grid Grid.Row="1" Margin="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <MenuFlyoutSeparator Margin="0,20"/>
+                <!-- PARTEA STÂNGĂ: Formularul -->
+                <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Padding="0,0,20,0">
+                    <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                            CornerRadius="8" Padding="20">
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Adaugă un Review" Style="{StaticResource TitleTextBlockStyle}" Margin="0,0,0,8"/>
 
-                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="15">
-                    <StackPanel Spacing="10">
-                        <TextBlock Text="Filtrează Review-urile" FontWeight="SemiBold" FontSize="18"/>
+                            <TextBox x:Name="InputNumeBautura" Header="Nume Băutură" PlaceholderText="ex: Espresso, Ursus..."/>
 
-                        <StackPanel Orientation="Horizontal" Spacing="15">
-                            <ComboBox x:Name="FilterCategory" PlaceholderText="Categorie" Width="150" SelectedIndex="0">
-                                <x:String>Toate</x:String>
+                            <ComboBox x:Name="InputCategorie" Header="Categorie" PlaceholderText="Selectează Categoria" HorizontalAlignment="Stretch">
                                 <x:String>Cafea</x:String>
                                 <x:String>Bere</x:String>
                                 <x:String>Vin</x:String>
                                 <x:String>Cocktail</x:String>
-                                <x:String>Ceai / Răcoritoare</x:String>
                                 <x:String>Spirtoase</x:String>
+                                <x:String>Ceai / Răcoritoare</x:String>
+                                <x:String>Non-alcoolice</x:String>
+                                <x:String>Fresh-uri</x:String>
                             </ComboBox>
 
-                            <TextBox x:Name="FilterLocation" PlaceholderText="Cuvânt locație..." Width="150"/>
+                            <AutoSuggestBox x:Name="InputRestaurant" Header="Unde ai băut? (Căutare pe hartă)" 
+                                            PlaceholderText="Caută locația..." TextChanged="InputRestaurant_TextChanged" QueryIcon="Find"/>
 
-                            <StackPanel Orientation="Horizontal" Spacing="5">
-                                <TextBlock Text="Preț Max:" VerticalAlignment="Center"/>
-                                <controls:NumberBox x:Name="FilterPrice" Value="0" Width="100"/>
-                            </StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Button Content="Caută" Click="ApplyFilters_Click" Style="{StaticResource AccentButtonStyle}"/>
-                            <Button Content="Reset" Click="ClearFilters_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-
-                <ListView x:Name="ListaBauturi" Margin="0,10,0,0">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Beverage">
-                            <StackPanel Margin="0,15" Background="Transparent" HorizontalAlignment="Stretch">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="{x:Bind Name}" FontWeight="Bold" FontSize="18"/>
-                                    <TextBlock Grid.Column="1" Text="{x:Bind PriceDisplay}" Foreground="Green" FontWeight="SemiBold"/>
-                                </Grid>
-
-                                <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,2">
-                                    <TextBlock Text="{x:Bind Category}" FontStyle="Italic" Foreground="Gray"/>
-                                    <TextBlock Text="|" Foreground="LightGray"/>
-                                    <TextBlock Text="{x:Bind RatingDisplay}" FontWeight="Bold"/>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="Preț (Lei)" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,4"/>
+                                    <controls:NumberBox x:Name="InputPret" Value="0.0" SmallChange="0.5" HorizontalAlignment="Stretch"/>
                                 </StackPanel>
 
-                                <TextBlock Text="{x:Bind LocationDisplay}" Foreground="DarkCyan" FontSize="12" FontWeight="SemiBold"/>
-                                <TextBlock Text="{x:Bind Comment}" TextWrapping="Wrap" Margin="0,5,0,0" Foreground="DimGray"/>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Nota ta" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,4"/>
+                                    <RatingControl x:Name="InputRating" MaxRating="5" Value="1.0"/>
+                                </StackPanel>
+                            </Grid>
 
-                                <Grid Margin="0,10,0,0">
-                                    <TextBlock Text="{x:Bind AddedByDisplay}" FontSize="10" Foreground="Gray" VerticalAlignment="Center"/>
-                                    <Button Content="Șterge" HorizontalAlignment="Right" Foreground="Red" Click="DeleteReview_Click" Visibility="{x:Bind DeleteButtonVisibility}" Tag="{x:Bind Id}"/>
-                                </Grid>
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Fotografie (Opțional)" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Button Content="📷 Alege o poză" Click="SelectPhotoButton_Click" />
+                                    <Border CornerRadius="4">
+                                        <Image x:Name="PreviewImagine" Width="40" Height="40" Stretch="UniformToFill" Visibility="Collapsed"/>
+                                    </Border>
+                                </StackPanel>
                             </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-        </ScrollViewer>
+
+                            <TextBox x:Name="InputComentariu" Header="Comentariu (Opțional)" PlaceholderText="Scrie părerea ta aici..." 
+                                     AcceptsReturn="True" Height="80" TextWrapping="Wrap"/>
+
+                            <Button Content="Salvează Review" Click="AdaugaReview_Click" Style="{StaticResource AccentButtonStyle}" 
+                                    HorizontalAlignment="Stretch" Margin="0,8,0,0" Height="40"/>
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer>
+
+                <!-- PARTEA DREAPTĂ: Lista și Filtrele -->
+                <Grid Grid.Column="1" Margin="20,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" 
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                            CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                        <StackPanel>
+                            <TextBlock Text="Filtrează și Sortează" FontWeight="SemiBold" Margin="0,0,0,12"/>
+
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                                <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Bottom">
+                                    <StackPanel>
+                                        <TextBlock Text="Categorie" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                        <ComboBox x:Name="FilterCategory" PlaceholderText="Alege" Width="140" SelectedIndex="0">
+                                            <x:String>Toate</x:String>
+                                            <x:String>Cafea</x:String>
+                                            <x:String>Bere</x:String>
+                                            <x:String>Vin</x:String>
+                                            <x:String>Cocktail</x:String>
+                                            <x:String>Spirtoase</x:String>
+                                            <x:String>Ceai / Răcoritoare</x:String>
+                                            <x:String>Non-alcoolice</x:String>
+                                            <x:String>Fresh-uri</x:String>
+                                        </ComboBox>
+                                    </StackPanel>
+
+                                    <StackPanel>
+                                        <TextBlock Text="Ordonează după" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                        <ComboBox x:Name="FilterSortare" Width="160" SelectedIndex="0">
+                                            <x:String>Cele mai noi (Dată)</x:String>
+                                            <x:String>Top (Cele mai bune note)</x:String>
+                                        </ComboBox>
+                                    </StackPanel>
+
+                                    <StackPanel>
+                                        <TextBlock Text="Cuvânt locație" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                        <TextBox x:Name="FilterLocation" PlaceholderText="Cuvânt..." Width="120"/>
+                                    </StackPanel>
+
+                                    <StackPanel>
+                                        <TextBlock Text="Preț Max" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                        <controls:NumberBox x:Name="FilterPrice" Value="0.0" Width="100"/>
+                                    </StackPanel>
+
+                                    <Button Content="Aplică" Click="ApplyFilters_Click" Style="{StaticResource AccentButtonStyle}" Margin="4,0,0,0"/>
+                                    <Button Content="Reset" Click="ClearFilters_Click"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+
+                    <ListView x:Name="ListaBauturi" Grid.Row="1" ShowsScrollingPlaceholders="False">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Margin" Value="0,0,0,12"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Beverage">
+                                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" 
+                                        BorderThickness="1" CornerRadius="8" Padding="16">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- FOTOGRAFIA (Acum poate fi apăsată!) -->
+                                        <Border Grid.Column="0" CornerRadius="6" Margin="0,0,16,0" VerticalAlignment="Top" Visibility="{x:Bind HasImage}">
+                                            <!-- Am adăugat Tapped, Tag și ToolTip -->
+                                            <Image Source="{x:Bind ImageSource}" Tag="{x:Bind ImageSource}" Tapped="Thumbnail_Tapped"
+                                                   ToolTipService.ToolTip="Apasă pentru a mări poza"
+                                                   Width="80" Height="80" Stretch="UniformToFill" />
+                                        </Border>
+
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Grid.Row="0" Text="{x:Bind Name}" Style="{StaticResource SubtitleTextBlockStyle}" FontWeight="Bold"/>
+
+                                            <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8" Margin="0,8,0,8">
+                                                <Border Background="{ThemeResource LayerFillColorDefaultBrush}" CornerRadius="4" Padding="6,2">
+                                                    <TextBlock Text="{x:Bind Category}" FontSize="12" FontWeight="SemiBold"/>
+                                                </Border>
+                                                <TextBlock Text="•" Foreground="Gray" VerticalAlignment="Center"/>
+                                                <RatingControl Value="{Binding Rating}" IsReadOnly="True" Margin="0,-4,0,0"/>
+                                                <TextBlock Text="•" Foreground="Gray" VerticalAlignment="Center"/>
+                                                <FontIcon Glyph="&#xE81D;" FontSize="12" Foreground="DarkCyan" VerticalAlignment="Center"/>
+                                                <TextBlock Text="{x:Bind LocationDisplay}" Foreground="DarkCyan" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                            </StackPanel>
+
+                                            <TextBlock Grid.Row="2" Text="{x:Bind Comment}" TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontStyle="Italic"/>
+
+                                            <Grid Grid.Row="3" Margin="0,12,0,0">
+                                                <TextBlock Text="{x:Bind AddedByDisplay}" FontSize="12" Foreground="Gray" VerticalAlignment="Center"/>
+                                                <Button Content="Șterge" Click="DeleteReview_Click" 
+                                                        Visibility="{x:Bind DeleteButtonVisibility}" Tag="{x:Bind Id}"
+                                                        HorizontalAlignment="Right" Foreground="#D13438" Background="Transparent" 
+                                                        BorderBrush="#D13438" BorderThickness="1" CornerRadius="4" Padding="8,2"/>
+                                            </Grid>
+                                        </Grid>
+
+                                        <!-- PREȚUL -->
+                                        <Border Grid.Column="2" Background="#E6F4EA" CornerRadius="4" Padding="8,4" VerticalAlignment="Top">
+                                            <TextBlock Text="{x:Bind PriceDisplay}" Foreground="#137333" FontWeight="Bold"/>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- ========================================== -->
+        <!-- 3. OVERLAY PENTRU IMAGINEA MĂRITĂ          -->
+        <!-- ========================================== -->
+        <!-- Apare deasupra tuturor elementelor când dăm click pe o poză -->
+        <Grid x:Name="ImageOverlay" Visibility="Collapsed" Background="#CC000000" Tapped="CloseImageOverlay_Tapped">
+
+            <!-- Imaginea Mărită -->
+            <Image x:Name="EnlargedImage" Stretch="Uniform" Margin="40"/>
+
+            <!-- Butonul de închidere X -->
+            <Button Content="✕" Click="CloseImageOverlay_Click" 
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="24" 
+                    Width="44" Height="44" CornerRadius="22" Background="#44FFFFFF" 
+                    Foreground="White" FontSize="18" FontWeight="Bold"/>
+        </Grid>
+
     </Grid>
 </Window>
