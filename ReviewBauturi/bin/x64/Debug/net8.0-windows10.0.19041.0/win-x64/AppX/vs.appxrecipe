@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-30T18:56:24.925</Modified>
+      <Modified>2026-05-20T16:01:04.267</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -38,7 +38,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>ReviewBauturi.exe</PackagePath>
-      <Modified>2026-04-30T18:56:24.201</Modified>
+      <Modified>2026-05-20T16:01:02.871</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MsixContent\CoreMessagingXP.dll">
       <PackagePath>CoreMessagingXP.dll</PackagePath>
@@ -1138,7 +1138,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ReviewBauturi.dll">
       <PackagePath>ReviewBauturi.dll</PackagePath>
-      <Modified>2026-04-30T18:56:24.194</Modified>
+      <Modified>2026-05-20T16:01:02.864</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.26\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -2110,7 +2110,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ReviewBauturi.deps.json">
       <PackagePath>ReviewBauturi.deps.json</PackagePath>
-      <Modified>2026-04-30T18:27:28.089</Modified>
+      <Modified>2026-05-20T15:32:37.769</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -2146,7 +2146,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexc\Desktop\SEM2\II\proiect\ReviewBauturi\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-04-30T18:52:27.977</Modified>
+      <Modified>2026-05-20T16:01:03.881</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup></ItemGroup>

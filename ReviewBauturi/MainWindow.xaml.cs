@@ -37,14 +37,12 @@ namespace ReviewBauturi
                 db.Database.EnsureCreated();
 
                 // === SECURITATE: CREARE CONT ADMIN IMPLICIT ===
-                // Verificăm dacă există deja un admin în baza de date
                 if (!db.Users.Any(u => u.IsAdmin == true))
                 {
-                    // Dacă nu există, creăm contul "stăpânului" aplicației
                     var adminUser = new Models.User
                     {
-                        Username = "Admin",         // Numele tău de admin
-                        Password = "112233", // Parola ta (alege una grea)
+                        Username = "Admin",
+                        Password = "112233",
                         IsAdmin = true
                     };
 
@@ -63,7 +61,6 @@ namespace ReviewBauturi
         // ==========================================
         private void Thumbnail_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            // Preluăm imaginea de pe ecran și sursa ei
             if (sender is Image img && img.Tag is BitmapImage bmp)
             {
                 EnlargedImage.Source = bmp;
@@ -78,7 +75,6 @@ namespace ReviewBauturi
 
         private void CloseImageOverlay_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            // Dacă dai click oriunde pe fundalul negru, se închide poza
             ImageOverlay.Visibility = Visibility.Collapsed;
         }
 
@@ -100,13 +96,14 @@ namespace ReviewBauturi
         }
 
         // ==========================================
-        // ÎNCĂRCARE, FILTRARE ȘI SORTARE (TOP)
+        // ÎNCĂRCARE, FILTRARE ȘI SORTARE (MULTIPLĂ)
         // ==========================================
         private void IncarcaDatele()
         {
             using var db = new AppDbContext();
             var bauturi = db.Beverages.ToList();
 
+            // 1. FILTRARE CATEGORIE
             if (FilterCategory.SelectedItem != null)
             {
                 string categorie = FilterCategory.SelectedItem.ToString() ?? "";
@@ -116,6 +113,7 @@ namespace ReviewBauturi
                 }
             }
 
+            // 2. FILTRARE LOCAȚIE
             if (!string.IsNullOrWhiteSpace(FilterLocation.Text))
             {
                 string locatieCautata = FilterLocation.Text.ToLower();
@@ -123,15 +121,44 @@ namespace ReviewBauturi
                                              b.RestaurantLocation.ToLower().Contains(locatieCautata)).ToList();
             }
 
-            if (FilterSortare.SelectedItem != null && FilterSortare.SelectedIndex == 1)
+            // 3. FILTRARE PREȚ MAXIM
+            if (!double.IsNaN(FilterPrice.Value) && FilterPrice.Value > 0)
             {
-                bauturi = bauturi.OrderByDescending(b => b.Rating).ThenByDescending(b => b.Id).ToList();
+                bauturi = bauturi.Where(b => b.Price <= FilterPrice.Value).ToList();
+            }
+
+            // 4. SORTARE MULTIPLĂ
+            if (FilterSortare.SelectedItem != null)
+            {
+                switch (FilterSortare.SelectedIndex)
+                {
+                    case 1: // Top (Cele mai bune note)
+                        bauturi = bauturi.OrderByDescending(b => b.Rating).ThenByDescending(b => b.Id).ToList();
+                        break;
+                    case 2: // Cele mai slabe note
+                        bauturi = bauturi.OrderBy(b => b.Rating).ThenByDescending(b => b.Id).ToList();
+                        break;
+                    case 3: // Preț: Ieftin -> Scump
+                        bauturi = bauturi.OrderBy(b => b.Price).ThenByDescending(b => b.Id).ToList();
+                        break;
+                    case 4: // Preț: Scump -> Ieftin
+                        bauturi = bauturi.OrderByDescending(b => b.Price).ThenByDescending(b => b.Id).ToList();
+                        break;
+                    case 5: // Nume (A - Z)
+                        bauturi = bauturi.OrderBy(b => b.Name).ToList();
+                        break;
+                    case 0: // Cele mai noi (Dată)
+                    default:
+                        bauturi = bauturi.OrderByDescending(b => b.Id).ToList();
+                        break;
+                }
             }
             else
             {
                 bauturi = bauturi.OrderByDescending(b => b.Id).ToList();
             }
 
+            // 5. APLICARE PERMISIUNI
             if (_currentUser != null)
             {
                 foreach (var b in bauturi)
@@ -150,6 +177,7 @@ namespace ReviewBauturi
             FilterCategory.SelectedIndex = 0;
             FilterSortare.SelectedIndex = 0;
             FilterLocation.Text = string.Empty;
+            FilterPrice.Value = 0.0;
             IncarcaDatele();
         }
 
@@ -268,7 +296,45 @@ namespace ReviewBauturi
 
         private void AdaugaReview_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(InputNumeBautura.Text) && InputCategorie.SelectedItem != null && _currentUser != null)
+            string mesajEroare = string.Empty;
+
+            // 1. Verificăm rând pe rând pentru a da mesajul corect
+            if (string.IsNullOrWhiteSpace(InputNumeBautura.Text) || InputCategorie.SelectedItem == null)
+            {
+                mesajEroare = "Completează Numele și Categoria!";
+            }
+            else if (double.IsNaN(InputPret.Value) || InputPret.Value <= 0)
+            {
+                mesajEroare = "Prețul trebuie să fie mai mare ca 0!";
+            }
+            else if (InputPret.Value > 99999)
+            {
+                mesajEroare = "Prețul depășește maximul admis de 99.999 lei!";
+            }
+
+            // 2. Dacă avem orice eroare, blocăm salvarea și afișăm mesajul
+            if (!string.IsNullOrEmpty(mesajEroare))
+            {
+                if (sender is Button btn)
+                {
+                    var continutOriginal = btn.Content;
+                    btn.Content = mesajEroare;
+                    btn.Background = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.DarkRed);
+
+                    var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(3) };
+                    timer.Tick += (s, args) =>
+                    {
+                        btn.Content = continutOriginal;
+                        btn.ClearValue(Button.BackgroundProperty);
+                        timer.Stop();
+                    };
+                    timer.Start();
+                }
+                return; // Oprim execuția, NU se salvează în baza de date
+            }
+
+            // 3. Dacă totul e perfect, salvăm review-ul
+            if (_currentUser != null)
             {
                 using (var db = new AppDbContext())
                 {
@@ -288,6 +354,7 @@ namespace ReviewBauturi
                     db.SaveChanges();
                 }
 
+                // 4. Resetăm câmpurile după salvarea cu succes
                 InputNumeBautura.Text = string.Empty;
                 InputCategorie.SelectedIndex = -1;
                 InputRestaurant.Text = string.Empty;
@@ -341,7 +408,6 @@ namespace ReviewBauturi
                         }
                     }
                 }
-                // Dacă a apăsat "Renunță", nu se întâmplă nimic (se închide doar dialogul)
             }
         }
 

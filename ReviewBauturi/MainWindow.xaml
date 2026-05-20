@@ -9,9 +9,6 @@
 
     <Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <!-- ========================================== -->
-        <!-- 1. ECRANELE DE AUTENTIFICARE               -->
-        <!-- ========================================== -->
         <Grid x:Name="AuthGrid" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Border Width="360" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
                     BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
@@ -47,9 +44,6 @@
             </Border>
         </Grid>
 
-        <!-- ========================================== -->
-        <!-- 2. APLICAȚIA PRINCIPALĂ (DUPA LOGIN)       -->
-        <!-- ========================================== -->
         <Grid x:Name="MainAppPanel" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -77,7 +71,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- PARTEA STÂNGĂ: Formularul -->
                 <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Padding="0,0,20,0">
                     <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
                             BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
@@ -138,7 +131,6 @@
                     </Border>
                 </ScrollViewer>
 
-                <!-- PARTEA DREAPTĂ: Lista și Filtrele -->
                 <Grid Grid.Column="1" Margin="20,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -170,9 +162,13 @@
 
                                     <StackPanel>
                                         <TextBlock Text="Ordonează după" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
-                                        <ComboBox x:Name="FilterSortare" Width="160" SelectedIndex="0">
+                                        <ComboBox x:Name="FilterSortare" Width="180" SelectedIndex="0">
                                             <x:String>Cele mai noi (Dată)</x:String>
                                             <x:String>Top (Cele mai bune note)</x:String>
+                                            <x:String>Cele mai slabe note</x:String>
+                                            <x:String>Preț: Ieftin -> Scump</x:String>
+                                            <x:String>Preț: Scump -> Ieftin</x:String>
+                                            <x:String>Nume (A - Z)</x:String>
                                         </ComboBox>
                                     </StackPanel>
 
@@ -213,9 +209,7 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <!-- FOTOGRAFIA (Acum poate fi apăsată!) -->
                                         <Border Grid.Column="0" CornerRadius="6" Margin="0,0,16,0" VerticalAlignment="Top" Visibility="{x:Bind HasImage}">
-                                            <!-- Am adăugat Tapped, Tag și ToolTip -->
                                             <Image Source="{x:Bind ImageSource}" Tag="{x:Bind ImageSource}" Tapped="Thumbnail_Tapped"
                                                    ToolTipService.ToolTip="Apasă pentru a mări poza"
                                                    Width="80" Height="80" Stretch="UniformToFill" />
@@ -253,7 +247,6 @@
                                             </Grid>
                                         </Grid>
 
-                                        <!-- PREȚUL -->
                                         <Border Grid.Column="2" Background="#E6F4EA" CornerRadius="4" Padding="8,4" VerticalAlignment="Top">
                                             <TextBlock Text="{x:Bind PriceDisplay}" Foreground="#137333" FontWeight="Bold"/>
                                         </Border>
@@ -266,16 +259,8 @@
             </Grid>
         </Grid>
 
-        <!-- ========================================== -->
-        <!-- 3. OVERLAY PENTRU IMAGINEA MĂRITĂ          -->
-        <!-- ========================================== -->
-        <!-- Apare deasupra tuturor elementelor când dăm click pe o poză -->
         <Grid x:Name="ImageOverlay" Visibility="Collapsed" Background="#CC000000" Tapped="CloseImageOverlay_Tapped">
-
-            <!-- Imaginea Mărită -->
             <Image x:Name="EnlargedImage" Stretch="Uniform" Margin="40"/>
-
-            <!-- Butonul de închidere X -->
             <Button Content="✕" Click="CloseImageOverlay_Click" 
                     HorizontalAlignment="Right" VerticalAlignment="Top" Margin="24" 
                     Width="44" Height="44" CornerRadius="22" Background="#44FFFFFF" 

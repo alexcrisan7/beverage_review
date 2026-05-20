@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReviewBauturi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7a846142a4bac0be3d0a628dced889c6b1eb2fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c48ba4008c0a15c0e1229409fcf01a9bacbe66e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReviewBauturi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReviewBauturi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
